@@ -16,6 +16,8 @@ model Category {
   slug     String
   imageUrl String
   products Product[]
+
+  @@map("category")
 }
 
 model Product {
@@ -28,4 +30,6 @@ model Product {
   categoryId      String
   category        Category @relation(fields: [categoryId], references: [id])
   descountPercent Int      @default(0)
+
+  @@map("products")
 }
